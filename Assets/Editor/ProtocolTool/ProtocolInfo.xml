@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<!--枚举配置规则-->
+	<enum name="E_PLAYER_TYPE" namespace="GamePlayer">
+		<field name="MAIN">1</field>
+		<field name="OTHER"/>
+	</enum>
+	<enum name="E_HERO_TYPE" namespace="GamePlayer">
+		<field name="MAIN"/>
+		<field name="OTHER"/>
+	</enum>
+	<enum name="E_MONSTER_TYPE" namespace="GameMonster">
+		<field name="NORMAL">2</field>
+		<field name="BOSS"/>
+	</enum>
+	<!--数据结构类配置规则-->
+	<data name="PlayerData" namespace="GamePlayer">
+		<field type="int" name="id"/>
+		<field type="float" name="atk"/>
+		<field type="bool" name="sex"/>
+		<field type="long" name="lev"/>
+		<field type="array" data="int" name="arrays"/>
+		<field type="list" T="int" name="list"/>
+		<field type="dic" Tkey="int" Tvalue="string" name="dic"/>
+		<field type="enum" data="E_HERO_TYPE" name="heroType"/>
+	</data>
+	<!--消息类类配置规则-->
+	<message id="1001" name="PlayerMsg" namespace="GamePlayer">
+		<field type="int" name="playerID"/>
+		<field type="PlayerData" name="data"/>
+	</message>
+	<message id="1002" name="HeartMsg" namespace="GameSystem"/>
+	<message id="1003" name="QuitMsg" namespace="GameSystem"/>
+</messages>
